@@ -150,6 +150,7 @@ body {
     top: 40px;
     z-index: 50;
     border: none;
+    margin-bottom: 20px; 
 }
 
 .alphabet-nav button {
