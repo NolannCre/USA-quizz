@@ -1,0 +1,236 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background: #434343;
+}
+
+.questionnaire {
+    max-width: 500px;
+    margin: auto;
+    background: #989292;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    padding: 24px;
+}
+
+.image-section {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+#back {
+    visibility: hidden;
+    text-align: center;
+    transition: visibility 0.05s ease;
+}
+
+#start-button {
+    visibility: visible;
+    text-align: center;
+    transition: visibility 0.05s ease;
+}
+
+#start-button button, #back {
+    height: auto;
+    margin-top: 12px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: #000000;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.response-section {
+    visibility: hidden;
+    transition: visibility 1s ease;
+}
+
+#response-section {
+    max-height: 20px;
+    visibility: hidden;
+    margin-top: 16px;
+    transition: visibility 1s ease;
+    height: 0px;
+}
+
+.response-section input,
+.response-section textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.response-section button {
+    margin-top: 12px;
+    padding: 10px 20px;
+    border: none;
+    background: #000000;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.response-section button:hover {
+    background: #434343;
+}
+
+.etat_nontrouve {
+    cursor: pointer;
+    fill: #000000;
+    stroke: #000000;
+    stroke-width: 1px;
+    transition: fill 0.3s, stroke 0.3s;
+}
+
+
+.etat_nontrouve:hover {
+    fill: 'white';
+    stroke: #000;
+}
+
+#tools {
+    height: 0px;
+}
+
+#container {
+    text-align: center;
+    margin-top: 20px;
+    visibility: hidden;
+    height: 0px;
+    color: #989292;
+}
+
+#container button {
+    border: none;
+    background: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+@media (max-width: 480px) {
+    .alphabet-nav {
+        top: 70px;
+    }
+
+    .search-container {
+        top: 115px;
+    }
+
+    .alphabet-nav button {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+#tools {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 0%;
+    transition: height 0.3s ease;
+}
+
+
+.alphabet-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px;
+    background: #989292;
+    border-bottom: 1px solid #dee2e6;
+    position: sticky;
+    top: 40px;
+    z-index: 50;
+    border: none;
+}
+
+.alphabet-nav button {
+    width: 35px;
+    height: 35px;
+    margin: 2px;
+    border: 1px solid #ddd;
+    color: white;
+    background: #000000;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.alphabet-nav button:hover,
+.alphabet-nav button.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.search-container {
+    padding: 0px;
+    height: 0px;
+    visibility: hidden;
+}
+
+.search-input {
+    height: 0px;
+    width: 0px;
+    visibility: hidden;
+    padding: 0px;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #007bff;
+    background: white;
+}
+
+
+#container {
+    padding: 15px;
+    visibility: hidden;
+}
+
+.states-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.state-button {
+    background: #fff;
+    border: 2px solid #e9ecef;
+    color: #495057;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.state-button:hover,
+.state-button:active {
+    border-color: #007bff;
+    background: #f8f9ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15);
+}
+
+.state-button.selected {
+    background: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+.state-button.hidden {
+    display: none;
+}
