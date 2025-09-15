@@ -174,8 +174,6 @@ function change(element) {
         const bouton = document.getElementById('start-button');
         bouton.style.visibility = "hidden";
         document.getElementById('container').style.visibility = "hidden";
-        document.getElementById('alphabet-nav').style.visibility = "hidden";
-                document.getElementById('alphabet-nav').style.height = "0px";
         const element = document.getElementById('response-section');
         element.style.visibility = "visible";
 
@@ -187,6 +185,8 @@ function change(element) {
 }
 
 function back() {
+    document.getElementById('alphabet-nav').style.visibility = "hidden";
+        document.getElementById('alphabet-nav').style.height = "0px";
     document.getElementById('back').style.visibility = 'hidden';
     document.getElementById('tools').style.height = '0px';
     document.getElementById('container').style.visibility = 'hidden';
