@@ -165,6 +165,7 @@ function change(element) {
         const etat = document.getElementById('container');
         etat.style.visibility = "visible";
         document.getElementById('alphabet-nav').style.visibility = "visible";
+        document.getElementById('alphabet-nav').style.height = "auto";
 
         createAlphabetNav();
         createStateButtons();
@@ -186,7 +187,7 @@ function change(element) {
 
 function back() {
     document.getElementById('alphabet-nav').style.visibility = "hidden";
-        document.getElementById('alphabet-nav').style.height = "0px";
+    document.getElementById('alphabet-nav').style.height = "0px";
     document.getElementById('back').style.visibility = 'hidden';
     document.getElementById('tools').style.height = '0px';
     document.getElementById('container').style.visibility = 'hidden';
