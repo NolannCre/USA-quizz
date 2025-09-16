@@ -50,19 +50,24 @@ const etatsUSA = {
     "Wisconsin": 49,
     "Wyoming": 50
 };
- globalThis.oldNumero = 1;
-
+globalThis.oldNumero = 0;
+globalThis.learnMode = false;
 let listNumero = [];
 for (let i = 1; i <= 50; i++) {
     listNumero.push(i);
 }
 
 function clicEtat(numero) {
-    const state = document.getElementById(String(numero));
-    state.style.fill = "blue";
-    const oldState= document.getElementById(String(oldNumero));
-    oldState.style.fill = "black";
-    globalThis.oldNumero = numero;
+    if (learnMode == True) {
+        const state = document.getElementById(String(numero));
+        state.style.fill = "blue";
+        const oldState= document.getElementById(String(oldNumero));
+        if (oldNumero != 0) {
+            oldState.style.fill = "black";
+        }
+        globalThis.oldNumero = numero;
+        console.log(numero);
+    }
 }
 
 function pickState() {
@@ -86,7 +91,6 @@ function verification() {
         const state = document.getElementById(String(numero));
         state.style.fill = 'red';
     }
-    pickState();
 }
 
 function createAlphabetNav() {
@@ -160,6 +164,7 @@ function setupSearch() {
 
 function change(element) {
     if (element == 'learn') {
+        learnMode = true;
         const bouton = document.getElementById('start-button');
         bouton.style.visibility = "hidden";
         const etat = document.getElementById('container');
@@ -172,6 +177,7 @@ function change(element) {
         setupSearch();
     }
     if (element == 'quiz') {
+        learnMode = false;
         const bouton = document.getElementById('start-button');
         bouton.style.visibility = "hidden";
         document.getElementById('container').style.visibility = "hidden";
@@ -183,6 +189,11 @@ function change(element) {
     document.getElementById('start-button').style.height = "0px";
     document.getElementById('back').style.visibility = 'visible';
     document.getElementById('tools').style.height = '500px';
+}
+
+function next() {
+    document.getElementById('response').value = '';
+    pickState();
 }
 
 function back() {
