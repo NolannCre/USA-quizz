@@ -95,7 +95,7 @@ function verification() {
 
 function createAlphabetNav() {
     const alphabetNav = document.getElementById('alphabet-nav');
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    const letters = 'ACDFGHIKLMNOPRSTUVW'.split('');
 
     letters.forEach(letter => {
         const btn = document.createElement('button');
