@@ -164,7 +164,7 @@ function setupSearch() {
 
 function change(element) {
     if (element == 'learn') {
-        learnMode = true;
+        globalThis.learnMode = true;
         const bouton = document.getElementById('start-button');
         bouton.style.visibility = "hidden";
         const etat = document.getElementById('container');
@@ -177,7 +177,7 @@ function change(element) {
         setupSearch();
     }
     if (element == 'quiz') {
-        learnMode = false;
+        globalThis.learnMode = false;
         const bouton = document.getElementById('start-button');
         bouton.style.visibility = "hidden";
         document.getElementById('container').style.visibility = "hidden";
