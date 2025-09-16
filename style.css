@@ -226,6 +226,12 @@ body {
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15);
 }
 
+.state-button:focus {
+    background: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
 .state-button.selected {
     background: #007bff;
     color: white;
