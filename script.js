@@ -58,15 +58,37 @@ for (let i = 1; i <= 50; i++) {
 }
 
 function clicEtat(numero) {
-    if (learnMode == True) {
+    if (learnMode) {
         const state = document.getElementById(String(numero));
         state.style.fill = "blue";
         const oldState= document.getElementById(String(oldNumero));
-        if (oldNumero != 0) {
+        if ((oldNumero != 0) && (oldNumero != numero)) {
             oldState.style.fill = "black";
         }
         globalThis.oldNumero = numero;
         console.log(numero);
+    }
+}
+
+function clicEtatName(numero) {
+    clicEtat(numero);
+    if (learnMode) {
+    const letter = Object.keys(etatsUSA).find(key => etatsUSA[key] === numero);
+    document.querySelectorAll('.alphabet-nav button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+
+    document.querySelectorAll('.state-button').forEach(btn => {
+        const stateName = btn.dataset.state;
+        if (stateName.toLowerCase() === letter.toLowerCase()) {
+            btn.classList.remove('hidden');
+        } else {
+            btn.classList.add('hidden');
+        }
+    });
+
+    document.getElementById('container').scrollIntoView({ behavior: 'smooth' });
     }
 }
 
@@ -78,9 +100,15 @@ function pickState() {
 }
 
 function verification() {
-    const reponse = document.getElementById('response').value;
-    const bool = etatsUSA[reponse] == numero;
-    console.log(bool);
+    const reponse = document.getElementById('response').value.toLowerCase().trim();
+
+    for (const [key, value] of Object.entries(etatsUSA)) {
+        if (key.toLowerCase().trim() === reponse) {
+            globalThis.bool = etatsUSA[key] == numero;
+            break;
+        }
+        globalThis.bool = etatsUSA[reponse] == numero;
+    }
     if (bool) {
         document.getElementById('response').value = "Correct!";
         const state = document.getElementById(String(numero));
